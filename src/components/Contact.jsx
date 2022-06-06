@@ -7,9 +7,10 @@ import {
   Typography,
 } from '@mui/material'
 import Image from 'next/image'
-import Link from '../../Link'
-import addressPicture from '../../../public/images/contact/address4.png'
-import Copyright from '../../Copyright'
+
+import Link from '../Link'
+import addressPicture from '../../public/images/contact/address4.png'
+import Copyright from '../Copyright'
 
 const defaultFormFields = {
   name: '',

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Fade, Grid, Typography } from '@mui/material'
 import Card from './Card'
-import { projects } from '../../../data'
+import { projects } from '../../data'
 
 const Work = React.forwardRef((props, ref) => {
   return (

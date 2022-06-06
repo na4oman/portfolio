@@ -7,7 +7,7 @@ import Hero from '../src/components/Hero'
 import Work from '../src/components/Work'
 import Skills from '../src/components/Skills'
 import Contact from '../src/components/Contact'
-import TopAppBar from '../src/components/TopAppBar/TopAppBar'
+import TopAppBar from '../src/components/TopAppBar'
 import SidebarMobile from '../src/components/SidebarMobile'
 import About from '../src/components/About'
 import { Button } from '@mui/material'
@@ -50,10 +50,10 @@ export default function Index() {
         }}
       >
         <Hero onClickHanle={executeScroll} />
-        {/* <About ref={aboutRef} />
+        <About ref={aboutRef} />
         <Skills ref={skillsRef} />
         <Work ref={workRef} />
-        <Contact ref={contactRef} /> */}
+        <Contact ref={contactRef} />
       </Box>
     </>
   )
