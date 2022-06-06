@@ -3,7 +3,7 @@ import Box from '@mui/material/Box'
 import Logo from './Logo'
 import Nav from './Nav'
 import SocialMedia from './SocialMedia'
-import { Button } from '@mui/material'
+import { Button, Slide } from '@mui/material'
 
 const Sidebar = ({ onClickHanle }) => {
   const clickHandler = index => onClickHanle(index)

@@ -10,6 +10,13 @@ import CloseIcon from '@mui/icons-material/Close'
 import { Stack } from '@mui/material'
 
 export default function TopAppBar({ onClickHandler, openIcon }) {
+  const handleClick = () =>
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    })
+
   return (
     <Box
       sx={{
@@ -22,10 +29,22 @@ export default function TopAppBar({ onClickHandler, openIcon }) {
       }}
     >
       <AppBar position='fixed'>
-        <Toolbar>
+        <Toolbar
+          sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}
+        >
           <Stack
+            onClick={handleClick}
             component='div'
-            sx={{ flexGrow: 1 }}
+            sx={{
+              // flexGrow: 1,
+              '&:hover': {
+                cursor: 'pointer',
+              },
+            }}
             justifyContent='flex-start'
             direction='row'
           >

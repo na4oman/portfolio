@@ -33,7 +33,7 @@ const Hero = ({ onClickHanle }) => {
       }}
     >
       <Slide
-        direction='right'
+        direction='down'
         in={shown}
         container={textHiRef.current}
         timeout={2000}

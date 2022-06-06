@@ -26,8 +26,9 @@ const SidebarMobile = ({ onClickHanle }) => {
       }}
       timeout={1500}
       easing={{
-        enter: 'cubic-bezier(0, 1.5, .8, 1)',
-        exit: 'linear',
+        enter: 'cubic-bezier(0, 1.3, .8, 1)',
+        // exit: 'linear',
+        exit: 'cubic-bezier(0, 1.3, .8, 1)',
       }}
     >
       <Box
@@ -38,7 +39,7 @@ const SidebarMobile = ({ onClickHanle }) => {
         p={0}
         backgroundColor='background.default'
         sx={{
-          paddingTop: '64px',
+          paddingTop: '20px',
           height: '100vh',
           display: { xs: 'flex', md: 'none' },
           flexDirection: 'column',

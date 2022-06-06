@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import {
   Box,
   Divider,
@@ -6,6 +6,7 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  Slide,
 } from '@mui/material'
 import { styled } from '@mui/system'
 
@@ -20,6 +21,12 @@ const MyListItem = styled(ListItem)(() => ({
 
 export default function Nav({ onHandleClick }) {
   const [selectedIndex, setSelectedIndex] = React.useState(null)
+  const [shown, setShown] = useState(false)
+  const boxContainerRef = useRef(null)
+
+  useEffect(() => {
+    setShown(true)
+  }, [])
 
   const handleListItemClick = index => {
     setSelectedIndex(index)
@@ -52,40 +59,52 @@ export default function Nav({ onHandleClick }) {
         alignItems: 'stretch',
         justifyContent: 'center',
       }}
+      ref={boxContainerRef}
     >
-      <List
-        sx={{
-          color: theme => theme.palette.grey[500],
-          // selected and (selected + hover) states
-          '&& .Mui-selected, && .Mui-selected:hover': {
-            color: 'secondary.main',
-            backgroundColor: 'inherit',
-          },
-          // hover states
-          '& .MuiListItemButton-root:hover': {
-            color: 'secondary.main',
-            backgroundColor: 'inherit',
-          },
+      <Slide
+        direction='right'
+        in={shown}
+        container={boxContainerRef.current}
+        timeout={2000}
+        easing={{
+          enter: 'cubic-bezier(0, 1.5, .8, 1)',
+          exit: 'linear',
         }}
       >
-        <MyDivider />
-        <MyListItem>
-          <MyListItemButton text='About' index={0} />
-        </MyListItem>
-        <MyDivider />
-        <MyListItem>
-          <MyListItemButton text='My Skills' index={1} />
-        </MyListItem>
-        <MyDivider />
-        <MyListItem>
-          <MyListItemButton text='Work' index={2} />
-        </MyListItem>
-        <MyDivider />
-        <MyListItem>
-          <MyListItemButton text='Contact' index={3} />
-        </MyListItem>
-        <MyDivider />
-      </List>
+        <List
+          sx={{
+            color: theme => theme.palette.grey[500],
+            // selected and (selected + hover) states
+            '&& .Mui-selected, && .Mui-selected:hover': {
+              color: 'secondary.main',
+              backgroundColor: 'inherit',
+            },
+            // hover states
+            '& .MuiListItemButton-root:hover': {
+              color: 'secondary.main',
+              backgroundColor: 'inherit',
+            },
+          }}
+        >
+          <MyDivider />
+          <MyListItem>
+            <MyListItemButton text='About' index={0} />
+          </MyListItem>
+          <MyDivider />
+          <MyListItem>
+            <MyListItemButton text='My Skills' index={1} />
+          </MyListItem>
+          <MyDivider />
+          <MyListItem>
+            <MyListItemButton text='Work' index={2} />
+          </MyListItem>
+          <MyDivider />
+          <MyListItem>
+            <MyListItemButton text='Contact' index={3} />
+          </MyListItem>
+          <MyDivider />
+        </List>
+      </Slide>
     </Box>
   )
 }
