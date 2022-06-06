@@ -1,8 +1,23 @@
 import { Box, Stack, Typography } from '@mui/material'
 
 export default function Logo() {
+  const handleClick = () =>
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    })
+
   return (
-    <Box textAlign='center'>
+    <Box
+      textAlign='center'
+      onClick={handleClick}
+      sx={{
+        '&:hover': {
+          cursor: 'pointer',
+        },
+      }}
+    >
       <Stack justifyContent='center' direction='row' sx={{ fontWeight: 800 }}>
         <Typography
           variant='h1'
@@ -22,6 +37,7 @@ export default function Logo() {
         </Typography>
       </Stack>
       <Typography
+        cursor='pointer'
         color='common.white'
         variant='h5'
         component='p'

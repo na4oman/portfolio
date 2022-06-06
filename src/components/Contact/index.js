@@ -11,25 +11,43 @@ import Link from '../../Link'
 import addressPicture from '../../../public/images/contact/address4.png'
 import Copyright from '../../Copyright'
 
+const defaultFormFields = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+}
+
 const Contact = React.forwardRef((props, ref) => {
+  const [formFields, setFormFields] = useState(defaultFormFields)
+  const { name, email, subject, message } = formFields
+
+  const changeHandler = event => {
+    const { name, value } = event.target
+
+    setFormFields({ ...formFields, [name]: value })
+  }
+
+  const resetFormFields = () => setFormFields(defaultFormFields)
+
   const submitHandler = event => {
     event.preventDefault()
-    const formData = new FormData(event.currentTarget)
-    const name = formData.get('name')
-    const email = formData.get('email')
-    const subject = formData.get('subject')
-    const message = formData.get('message')
+    // const formData = new FormData(event.currentTarget)
+    // const name = formData.get('name')
+    // const email = formData.get('email')
+    // const subject = formData.get('subject')
+    // const message = formData.get('message')
 
-    const newFormData = {
-      name,
-      email,
-      subject,
-      message,
-    }
+    // const newFormData = {
+    //   name,
+    //   email,
+    //   subject,
+    //   message,
+    // }
 
     fetch(`/api/messages`, {
       method: 'POST',
-      body: JSON.stringify(newFormData),
+      body: JSON.stringify(formFields),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -42,6 +60,7 @@ const Contact = React.forwardRef((props, ref) => {
       .then(data => {
         console.log(data)
         alert('Data was successfully sent.')
+        resetFormFields()
       })
       .catch(error => {
         console.log(error.message || 'Something went wrong')
@@ -111,7 +130,9 @@ const Contact = React.forwardRef((props, ref) => {
               <TextField
                 id='name'
                 name='name'
-                label='Name'
+                value={name}
+                onChange={changeHandler}
+                label='Full Name'
                 type='text'
                 color='secondary'
                 border='white'
@@ -125,6 +146,8 @@ const Contact = React.forwardRef((props, ref) => {
               <TextField
                 id='email'
                 name='email'
+                value={email}
+                onChange={changeHandler}
                 label='Email'
                 type='email'
                 variant='filled'
@@ -144,6 +167,8 @@ const Contact = React.forwardRef((props, ref) => {
               <TextField
                 id='subject'
                 name='subject'
+                value={subject}
+                onChange={changeHandler}
                 label='Subject'
                 type='text'
                 variant='filled'
@@ -163,6 +188,8 @@ const Contact = React.forwardRef((props, ref) => {
               <TextField
                 id='message'
                 name='message'
+                value={message}
+                onChange={changeHandler}
                 label='Message'
                 type='text'
                 variant='filled'

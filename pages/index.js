@@ -49,11 +49,11 @@ export default function Index() {
           marginLeft: { xs: '0', md: '9rem' },
         }}
       >
-        <Hero />
-        <About ref={aboutRef} />
+        <Hero onClickHanle={executeScroll} />
+        {/* <About ref={aboutRef} />
         <Skills ref={skillsRef} />
         <Work ref={workRef} />
-        <Contact ref={contactRef} />
+        <Contact ref={contactRef} /> */}
       </Box>
     </>
   )

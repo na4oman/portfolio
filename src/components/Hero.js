@@ -5,7 +5,7 @@ import Image from 'next/image'
 import profilePic2 from '../../public/images/profile/atanas2.jpg'
 import Link from '../Link'
 
-export default function Hero() {
+const Hero = ({ onClickHanle }) => {
   const [shown, setShown] = useState(false)
   const imageContainerRef = useRef(null)
   const textHiRef = useRef(null)
@@ -14,8 +14,11 @@ export default function Hero() {
     setShown(true)
   }, [])
 
+  const handleButtonClick = () => onClickHanle(3)
+
   return (
     <Box
+      ref={textHiRef}
       component='section'
       bgcolor='background.default'
       color='text.secondary.main'
@@ -28,7 +31,6 @@ export default function Hero() {
         alignItems: 'center',
         paddingX: { xs: 5, md: 0 },
       }}
-      ref={textHiRef}
     >
       <Slide
         direction='right'
@@ -115,7 +117,7 @@ export default function Hero() {
               letterSpacing: '3px',
             }}
           >
-            Full Stack Developer
+            Full Stack Web Developer
           </Typography>
           <Typography
             component='h4'
@@ -129,9 +131,9 @@ export default function Hero() {
             JavaScript / React / NextJS / NodeJS / Express / MongoDB
           </Typography>
           <Box>
-            <Link
-              href='/'
+            <Button
               // color='secondary'
+              onClick={handleButtonClick}
               sx={{
                 color: theme => theme.palette.secondary.main,
                 display: 'inline-block',
@@ -152,7 +154,7 @@ export default function Hero() {
               }}
             >
               Contact me!
-            </Link>
+            </Button>
           </Box>
         </Box>
       </Slide>
@@ -198,3 +200,5 @@ export default function Hero() {
     </Box>
   )
 }
+
+export default Hero

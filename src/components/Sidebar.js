@@ -10,7 +10,7 @@ const Sidebar = ({ onClickHanle }) => {
 
   return (
     <Box
-      component='header'
+      component='section'
       position='fixed'
       width='9rem'
       margin={0}
