@@ -13,8 +13,14 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 
 export default function SocialMedia() {
   const [selectedIndex, setSelectedIndex] = React.useState(1)
+
   const handleListItemClick = index => {
-    setSelectedIndex(index)
+    const links = [
+      'https://www.linkedin.com/in/atanas-irikev-1247051b3/',
+      'https://github.com/na4oman',
+      'https://www.instagram.com/atanasirikev/',
+    ]
+    window.open(links[index], '_blank')
   }
 
   return (
@@ -28,14 +34,20 @@ export default function SocialMedia() {
         // selected and (selected + hover) states
         '&& .Mui-selected, && .Mui-selected:hover': {
           // color: 'info.main',
-          color: theme => theme.palette.info.main,
+          color: theme => theme.palette.secondary.main,
+          backgroundColor: 'inherit',
         },
         // hover states
         '& .MuiListItemButton-root:hover': {
-          color: 'info.main',
+          color: 'secondary.main',
+          backgroundColor: 'inherit',
         },
         '& .MuiSvgIcon-root:hover': {
-          color: 'info.main',
+          color: 'secondary.main',
+          backgroundColor: 'inherit',
+        },
+        '& .MuiListItem-root': {
+          width: 'auto',
         },
       }}
     >

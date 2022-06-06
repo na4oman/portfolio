@@ -7,7 +7,7 @@ export default function Logo() {
         <Typography
           variant='h1'
           component='span'
-          color='info.main'
+          color='secondary'
           sx={{ fontWeight: 500, transform: 'translateX(28px)' }}
         >
           A

@@ -18,15 +18,29 @@ const MyListItem = styled(ListItem)(() => ({
   paddingRight: 0,
 }))
 
-export default function Nav() {
-  const [selectedIndex, setSelectedIndex] = React.useState(1)
+export default function Nav({ onHandleClick }) {
+  const [selectedIndex, setSelectedIndex] = React.useState(null)
+
   const handleListItemClick = index => {
     setSelectedIndex(index)
+    onHandleClick(index)
   }
 
   const MyDivider = styled(Divider)(({ theme }) => ({
     backgroundColor: theme.palette.grey[800],
   }))
+
+  const MyListItemButton = ({ text, index }) => {
+    return (
+      <ListItemButton
+        sx={{ padding: '2px 0' }}
+        selected={selectedIndex === index}
+        onClick={() => handleListItemClick(index)}
+      >
+        <ListItemText primary={text} />
+      </ListItemButton>
+    )
+  }
 
   return (
     <Box
@@ -44,53 +58,31 @@ export default function Nav() {
           color: theme => theme.palette.grey[500],
           // selected and (selected + hover) states
           '&& .Mui-selected, && .Mui-selected:hover': {
-            color: 'info.main',
+            color: 'secondary.main',
+            backgroundColor: 'inherit',
           },
           // hover states
           '& .MuiListItemButton-root:hover': {
-            color: 'info.main',
+            color: 'secondary.main',
+            backgroundColor: 'inherit',
           },
         }}
       >
         <MyDivider />
         <MyListItem>
-          <ListItemButton
-            sx={{ padding: '2px 0' }}
-            selected={selectedIndex === 0}
-            onClick={() => handleListItemClick(0)}
-          >
-            <ListItemText primary='About' />
-          </ListItemButton>
+          <MyListItemButton text='About' index={0} />
         </MyListItem>
         <MyDivider />
         <MyListItem>
-          <ListItemButton
-            sx={{ padding: '2px 0' }}
-            selected={selectedIndex === 1}
-            onClick={() => handleListItemClick(1)}
-          >
-            <ListItemText primary='My Skills' />
-          </ListItemButton>
+          <MyListItemButton text='My Skills' index={1} />
         </MyListItem>
         <MyDivider />
         <MyListItem>
-          <ListItemButton
-            sx={{ padding: '2px 0' }}
-            selected={selectedIndex === 2}
-            onClick={() => handleListItemClick(2)}
-          >
-            <ListItemText primary='Work' />
-          </ListItemButton>
+          <MyListItemButton text='Work' index={2} />
         </MyListItem>
         <MyDivider />
         <MyListItem>
-          <ListItemButton
-            sx={{ padding: '2px 0' }}
-            selected={selectedIndex === 3}
-            onClick={() => handleListItemClick(3)}
-          >
-            <ListItemText primary='Contact' />
-          </ListItemButton>
+          <MyListItemButton text='Contact' index={3} />
         </MyListItem>
         <MyDivider />
       </List>

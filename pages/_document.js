@@ -3,6 +3,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 import createEmotionServer from '@emotion/server/create-instance'
 import theme from '../src/theme'
 import createEmotionCache from '../src/createEmotionCache'
+import { getInitColorSchemeScript } from '@mui/material/styles'
 
 export default class MyDocument extends Document {
   render() {
@@ -20,6 +21,7 @@ export default class MyDocument extends Document {
           {this.props.emotionStyleTags}
         </Head>
         <body>
+          {getInitColorSchemeScript()}
           <Main />
           <NextScript />
         </body>

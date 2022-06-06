@@ -1,15 +1,15 @@
-import * as React from 'react';
-import Typography from '@mui/material/Typography';
-import MuiLink from '@mui/material/Link';
+import * as React from 'react'
+import Typography from '@mui/material/Typography'
+import MuiLink from '@mui/material/Link'
 
 export default function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <MuiLink color="inherit" href="https://mui.com/">
-        Your Website
-      </MuiLink>{' '}
-      {new Date().getFullYear()}.
+    <Typography variant='body2' color='primary.main' align='center'>
+      {'Copyright © '} {new Date().getFullYear()} by{' '}
+      <MuiLink color='inherit' href='/'>
+        Atanas Irikev
+      </MuiLink>
+      . All rights reserved.
     </Typography>
-  );
+  )
 }

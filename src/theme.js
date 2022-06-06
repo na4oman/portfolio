@@ -1,7 +1,7 @@
 import { createTheme } from '@mui/material/styles'
 
 export const Colors = {
-  primary: '#5f2c3e',
+  primary: '#9e9e9e',
   secondary: '#d1adcc',
   success: '#4CAF50',
   info: '#08fdd8',
@@ -15,13 +15,16 @@ export const Colors = {
   border: '#DDDFE1',
   inverse: '#2F3D4A',
   shaft: '#333',
+  tertiary: '#e2e2e2',
+  light_gray: '#f3f6f9',
+  dark_grey: '#c5c5c5',
   ///////////////
   // Grays
   ///////////////
   dim_grey: '#696969',
   dove_gray: '#d5d5d5',
   body_bg: '#f3f6f9',
-  light_gray: 'rgb(230,230,230)',
+  // light_gray: 'rgb(230,230,230)',
   ///////////////
   // Solid Color
   ///////////////
@@ -31,34 +34,42 @@ export const Colors = {
 
 // Create a theme instance.
 const theme = createTheme({
-  palette: {
-    primary: {
-      main: Colors.primary,
+  colorSchemes: {
+    light: {
+      palette: {
+        primary: 'red',
+        secondary: 'yellow',
+        error: 'orange',
+        warning: 'orange',
+        info: 'blue',
+        success: 'green',
+        dark_grey: 'grey',
+        background: {
+          default: 'black',
+          light: 'lightgray',
+          // default: Colors.body_bg,
+          // default: Colors.dove_gray,
+        },
+      },
     },
-    secondary: {
-      main: Colors.secondary,
+    dark: {
+      palette: {
+        primary: Colors.primary,
+        secondary: Colors.secondary,
+        error: Colors.error,
+        warning: Colors.warning,
+        info: Colors.info,
+        success: Colors.success,
+        dark_grey: Colors.grey,
+        background: {
+          default: Colors.dark,
+          light: Colors.dark_light,
+          // default: Colors.body_bg,
+          // default: Colors.dove_gray,
+        },
+      },
     },
-    error: {
-      main: Colors.error,
-    },
-    warning: {
-      main: Colors.warning,
-    },
-    info: {
-      main: Colors.info,
-    },
-    success: {
-      main: Colors.success,
-    },
-    dark_grey: {
-      main: Colors.grey,
-    },
-    background: {
-      default: Colors.dark,
-      light: Colors.dark_light,
-      // default: Colors.body_bg,
-      // default: Colors.dove_gray,
-    },
+
     text: {
       primary: {
         main: Colors.light,
@@ -66,6 +77,104 @@ const theme = createTheme({
       secondary: {
         main: Colors.body_bg,
       },
+      tertiary: {
+        main: Colors.dark,
+      },
+      light: {
+        main: Colors.dark_light,
+      },
+    },
+  },
+  components: {
+    MuiTypography: {
+      variants: [
+        {
+          props: {
+            variant: 'body3',
+          },
+          style: {
+            fontSize: 10,
+          },
+        },
+      ],
+    },
+    MuiButtonBase: {
+      defaultProps: {
+        disableRipple: true,
+      },
+    },
+    MuiIcon: {
+      defaultProps: {
+        padding: 0,
+      },
+    },
+  },
+})
+
+// Create a dark theme
+export const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#9e9e9e',
+    },
+    secondary: {
+      main: '#08fdd8',
+    },
+    tertiary: {
+      main: '#f3f6f9',
+    },
+    dark_grey: {
+      main: '#c5c5c5',
+    },
+    error: {
+      main: '#fd1056',
+    },
+  },
+  components: {
+    MuiTypography: {
+      variants: [
+        {
+          props: {
+            variant: 'body3',
+          },
+          style: {
+            fontSize: 10,
+          },
+        },
+      ],
+    },
+    MuiButtonBase: {
+      defaultProps: {
+        disableRipple: true,
+      },
+    },
+    MuiIcon: {
+      defaultProps: {
+        padding: 0,
+      },
+    },
+  },
+})
+
+// Create a dark theme
+export const lightTheme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: {
+      main: '#9e9e9e',
+    },
+    secondary: {
+      main: '#16243f',
+    },
+    tertiary: {
+      main: Colors.light_gray,
+    },
+    dark_grey: {
+      main: Colors.dark_grey,
+    },
+    error: {
+      main: '#e31003',
     },
   },
   components: {

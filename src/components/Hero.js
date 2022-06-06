@@ -19,13 +19,14 @@ export default function Hero() {
       component='section'
       bgcolor='background.default'
       color='text.secondary.main'
-      paddingX={15}
+      // paddingX={10}
       sx={{
         height: '100vh',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
         alignItems: 'center',
+        paddingX: { xs: 5, md: 0 },
       }}
       ref={textHiRef}
     >
@@ -34,21 +35,14 @@ export default function Hero() {
         in={shown}
         container={textHiRef.current}
         timeout={2000}
+        mountOnEnter
+        unmountOnExit
         easing={{
           enter: 'cubic-bezier(0, 1.5, .8, 1)',
           exit: 'linear',
         }}
       >
-        <Box
-          aria-label='text-zone'
-          flexGrow={1}
-          // bgcolor='lightblue'
-          // sx={{
-          //   display: 'flex',
-          //   alignItems: 'center',
-          //   justifyContent: 'center',
-          // }}
-        >
+        <Box aria-label='text-zone'>
           <Typography
             component='h1'
             variant='h1'
@@ -60,7 +54,8 @@ export default function Hero() {
               backgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               letterSpacing: '-1px',
-              lineHeight: '7rem',
+              lineHeight: { xs: '3rem', md: '4rem', lg: '5rem' },
+              fontSize: { xs: '3rem', md: '3.5rem', lg: '5rem' },
             }}
           >
             <Box
@@ -85,15 +80,15 @@ export default function Hero() {
                 position='relative'
                 ml={3}
                 sx={{
-                  color: theme => theme.palette.info.main,
+                  color: theme => theme.palette.secondary.main,
                   WebkitTextFillColor: 'initial',
-                  fontSize: '8rem',
+                  fontSize: { xs: '4.5rem', sm: '6rem', lg: '7.5rem' },
                   '&::before': {
                     content: '"A"',
                     display: 'block',
                     position: 'absolute',
                     top: 0,
-                    left: 8,
+                    left: 6,
                     color: theme => theme.palette.error.main,
                   },
                 }}
@@ -131,13 +126,14 @@ export default function Hero() {
               letterSpacing: '2px',
             }}
           >
-            JavaScript / NextJS / NodeJS / Express / MongoDB
+            JavaScript / React / NextJS / NodeJS / Express / MongoDB
           </Typography>
           <Box>
             <Link
-              href='/contact'
+              href='/'
+              // color='secondary'
               sx={{
-                color: theme => theme.palette.info.main,
+                color: theme => theme.palette.secondary.main,
                 display: 'inline-block',
                 padding: '.7rem 4rem',
                 border: '1px solid #08fdd8',
@@ -149,7 +145,7 @@ export default function Hero() {
                 fontWeight: '400',
                 transition: 'all 0.5s ease-in',
                 '&:hover': {
-                  background: theme => theme.palette.info.main,
+                  background: theme => theme.palette.secondary.main,
                   color: '#1d1d1d',
                   border: '1px solid #1d1d1d',
                 },
@@ -162,7 +158,7 @@ export default function Hero() {
       </Slide>
       <Box
         sx={{
-          display: 'flex',
+          display: { xs: 'none', sm: 'flex' },
           alignItems: 'center',
           justifyContent: 'center',
         }}
@@ -179,14 +175,12 @@ export default function Hero() {
           }}
         >
           <Box
-            flexGrow={1}
             sx={{
-              width: '20rem',
-              height: '20rem',
+              width: { xs: '12rem', md: '15rem', lg: '20rem' },
+              height: { xs: '12rem', md: '15rem', lg: '20rem' },
               boxShadow: '0 1px 8px rgba(0, 0, 0, 0.2)',
               borderRadius: '50%',
               overflow: 'hidden',
-              marginRight: '5rem',
             }}
           >
             <Image

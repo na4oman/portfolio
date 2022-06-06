@@ -16,7 +16,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import projectImage from '../../../public/images/projects/project1.avif'
 import Image from 'next/image'
-import { Button } from '@mui/material'
+import { Box, Button, Fade } from '@mui/material'
 import Link from '../../Link'
 import CodeIcon from '@mui/icons-material/Code'
 import LinkIcon from '@mui/icons-material/Link'
@@ -55,7 +55,7 @@ export default function RecipeReviewCard({ project }) {
   return (
     <Card
       sx={{
-        maxWidth: 300,
+        maxWidth: 345,
         color: 'primary.main',
         transition: 'all 0.2s ease-in',
         '&:hover': { transform: 'translateY(-5px)' },
@@ -67,52 +67,74 @@ export default function RecipeReviewCard({ project }) {
           height: '10rem',
           boxShadow: '0 1px 8px rgba(0, 0, 0, 0.2)',
           overflow: 'hidden',
-          marginRight: '5rem',
         }}
       >
         <Image
           src={image}
           alt={title}
-          width={320}
+          width={345}
           height={180}
           objectFit='cover'
           objectPosition='top'
         />
       </CardMedia>
-      <CardHeader title={title} subheader={technologies} />
       <CardContent>
-        <Typography variant='body2' color='text.secondary'>
-          {summary}
+        <Typography variant='h5' color='tertiary.main' mb={1}>
+          {title}
         </Typography>
+        <Typography variant='body1' color='dark_grey.main' mb={2}>
+          {technologies}
+        </Typography>
+        <Box height={120}>
+          <Typography variant='body2' color='primary'>
+            {summary}
+          </Typography>
+        </Box>
       </CardContent>
-      <CardActions disableSpacing>
-        <IconButton
+      <CardActions>
+        <Button
+          size='small'
+          color='secondary'
+          onClick={() => window.open(demoLink, '_ blank')}
+        >
+          DEMO
+        </Button>
+        <Button
+          size='small'
+          color='primary'
+          onClick={() => window.open(codeLink, '_ blank')}
+        >
+          CODE
+        </Button>
+        {/* <IconButton
+          color='secondary'
           aria-label='view project live'
           onClick={() => window.open(demoLink, '_ blank')}
         >
           <LinkIcon />
         </IconButton>
         <IconButton
+          color='primary'
           aria-label='view source code'
           onClick={() => window.open(codeLink, '_ blank')}
         >
           <CodeIcon />
-        </IconButton>
-        <ExpandMore
+        </IconButton> */}
+        {/* <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label='show more'
         >
           <ExpandMoreIcon />
-        </ExpandMore>
+        </ExpandMore> */}
       </CardActions>
-      <Collapse in={expanded} timeout='auto' unmountOnExit>
+      {/* <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
-          <Typography paragraph>Method:</Typography>
+          <Typography paragraph>Functionality:</Typography>
           <Typography paragraph>{description}</Typography>
         </CardContent>
-      </Collapse>
+      </Collapse> */}
     </Card>
   )
 }

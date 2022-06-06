@@ -3,8 +3,11 @@ import Box from '@mui/material/Box'
 import Logo from './Logo'
 import Nav from './Nav'
 import SocialMedia from './SocialMedia'
+import { Button } from '@mui/material'
 
-const Sidebar = () => {
+const Sidebar = ({ onClickHanle }) => {
+  const clickHandler = index => onClickHanle(index)
+
   return (
     <Box
       component='header'
@@ -12,17 +15,16 @@ const Sidebar = () => {
       width='9rem'
       margin={0}
       p={0}
-      flex={1}
       backgroundColor='background.default'
       sx={{
         height: '100vh',
-        display: 'flex',
+        display: { xs: 'none', md: 'flex' },
         flexDirection: 'column',
         justifyContent: 'space-around',
       }}
     >
       <Logo />
-      <Nav />
+      <Nav onHandleClick={clickHandler} />
       <SocialMedia />
     </Box>
   )

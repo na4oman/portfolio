@@ -1,4 +1,5 @@
-import { Box, Grid, Icon, SvgIcon, Typography } from '@mui/material'
+import React from 'react'
+import { Box, Grid, Typography } from '@mui/material'
 import {
   SiReact,
   SiNextdotjs,
@@ -14,7 +15,6 @@ import {
   SiFirebase,
   SiHtml5,
   SiCss3,
-  SiSass,
   SiHeroku,
   SiVercel,
   SiNetlify,
@@ -22,240 +22,54 @@ import {
 import { FaSass } from 'react-icons/fa'
 import { IconContext } from 'react-icons'
 
-export default function Skills() {
+const GridItem = ({ item, color }) => (
+  <Grid item xs={4} sm={3} md={2}>
+    <IconContext.Provider
+      value={{
+        color: color,
+        style: { fontSize: '4rem' },
+      }}
+    >
+      <Box>{item}</Box>
+    </IconContext.Provider>
+  </Grid>
+)
+
+const Skills = React.forwardRef((props, ref) => {
   return (
-    <Box mb={20} px={25}>
+    <Box ref={ref} mb={20} px={{ xs: '10%', sm: '20%' }}>
       <Typography
         component='h2'
-        variant='h3'
+        variant='h2'
         mb={10}
         textAlign='center'
         bgcolor='background.default'
-        sx={{
-          color: theme => theme.palette.info.main,
-          // height: '100vh',
-        }}
+        color='secondary'
       >
         My Skills
       </Typography>
       <Grid container spacing={5}>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: '#e75212',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <SiHtml5 />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: '#2965f1',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <SiCss3 />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: '#c76494',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <FaSass />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: '#61dbfb',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <SiReact />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: 'white',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <SiNextdotjs />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: '#00ed64',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <SiMongodb />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: 'white',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <SiExpress />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: '#f7e018',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <SiJavascript />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: '#689f63',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <SiNodedotjs />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: '#00b0ff',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <SiMaterialui />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: '#7a09f7',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <SiBootstrap />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: '#ff6c37',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <SiPostman />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: 'white',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <SiGithub />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: '#f05033',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <SiGit />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: '#ffcb2c',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <SiFirebase />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: '#7f56c3',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <SiHeroku />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: 'white',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <SiVercel />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
-        <Grid item>
-          <IconContext.Provider
-            value={{
-              color: '#3aafbc',
-              style: { fontSize: '7rem' },
-            }}
-          >
-            <Box>
-              <SiNetlify />
-            </Box>
-          </IconContext.Provider>
-        </Grid>
+        <GridItem item={<SiHtml5 />} color='#e75212' />
+        <GridItem item={<SiCss3 />} color='#2965f1' />
+        <GridItem item={<FaSass />} color='#c76494' />
+        <GridItem item={<SiReact />} color='#61dbfb' />
+        <GridItem item={<SiNextdotjs />} color='#fff' />
+        <GridItem item={<SiMongodb />} color='#00ed64' />
+        <GridItem item={<SiExpress />} color='#fff' />
+        <GridItem item={<SiJavascript />} color='#f7e018' />
+        <GridItem item={<SiNodedotjs />} color='#83cd29' />
+        <GridItem item={<SiMaterialui />} color='#00b0ff' />
+        <GridItem item={<SiBootstrap />} color='#7a09f7' />
+        <GridItem item={<SiPostman />} color='#ff6c37' />
+        <GridItem item={<SiGithub />} color='#fff' />
+        <GridItem item={<SiGit />} color='#f05033' />
+        <GridItem item={<SiFirebase />} color='#ffcb2c' />
+        <GridItem item={<SiHeroku />} color='#7f56c3' />
+        <GridItem item={<SiVercel />} color='#fff' />
+        <GridItem item={<SiNetlify />} color='#3aafbc' />
       </Grid>
     </Box>
   )
-}
+})
+
+export default Skills
