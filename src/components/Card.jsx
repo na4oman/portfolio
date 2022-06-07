@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography'
 // import projectImage from '../../../public/images/projects/project1.avif'
 import Image from 'next/image'
 import { Box, Button, Fade, Grow } from '@mui/material'
+import { useInView } from 'react-intersection-observer'
 
 const ExpandMore = styled(props => {
   const { expand, ...other } = props
@@ -32,6 +33,11 @@ export default function RecipeReviewCard({ project }) {
     summary,
     technologies,
   } = project
+
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0.2,
+  })
 
   // const containerRef = useRef(null)
   // const [isVisible, setIsVisible] = useState(false)
@@ -64,6 +70,7 @@ export default function RecipeReviewCard({ project }) {
         transition: 'all 0.2s ease-in',
         '&:hover': { transform: 'translateY(-5px)' },
       }}
+      ref={ref}
     >
       <CardMedia
         sx={{
@@ -71,6 +78,11 @@ export default function RecipeReviewCard({ project }) {
           height: '10rem',
           boxShadow: '0 1px 8px rgba(0, 0, 0, 0.2)',
           overflow: 'hidden',
+          // visibility: `${inView ? 'visible' : 'hidden'}`,
+          // transform: `${inView ? 'scale(1)' : 'scale(.7)'}`,
+          transition: 'all 0.2s ease-in',
+          filter: 'blur(5px)',
+          filter: `${inView ? 'blur(0)' : 'blur(5px)'}`,
         }}
       >
         <Image

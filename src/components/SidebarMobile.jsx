@@ -36,7 +36,8 @@ const SidebarMobile = ({ onClickHanle }) => {
         position='fixed'
         width='100%'
         margin={0}
-        p={0}
+        px={0}
+        py={5}
         backgroundColor='background.default'
         sx={{
           paddingTop: '20px',

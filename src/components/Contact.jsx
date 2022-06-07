@@ -11,6 +11,7 @@ import Image from 'next/image'
 import Link from '../Link'
 import addressPicture from '../../public/images/contact/address4.png'
 import Copyright from '../Copyright'
+import Mapbox from './Mapbox'
 
 const defaultFormFields = {
   name: '',
@@ -240,8 +241,8 @@ const Contact = React.forwardRef((props, ref) => {
             minWidth: '50%',
           }}
         >
-          <Image src={addressPicture} />
-
+          {/* <Image src={addressPicture} /> */}
+          <Mapbox />
           {/* GOOGLE MAPS */}
           {/* <iframe
             src='https://snazzymaps.com/embed/397127'

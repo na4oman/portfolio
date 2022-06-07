@@ -62,7 +62,7 @@ export default function Nav({ onHandleClick }) {
       ref={boxContainerRef}
     >
       <Slide
-        direction='right'
+        direction='up'
         in={shown}
         container={boxContainerRef.current}
         timeout={2000}
