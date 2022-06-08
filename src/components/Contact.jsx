@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   Box,
   Button,
@@ -12,6 +12,8 @@ import Link from '../Link'
 import addressPicture from '../../public/images/contact/address4.png'
 import Copyright from '../Copyright'
 import Mapbox from './Mapbox'
+import Alert from '@mui/material/Alert'
+import AlertTitle from '@mui/material/AlertTitle'
 
 const defaultFormFields = {
   name: '',
@@ -23,6 +25,15 @@ const defaultFormFields = {
 const Contact = React.forwardRef((props, ref) => {
   const [formFields, setFormFields] = useState(defaultFormFields)
   const { name, email, subject, message } = formFields
+  const [showMessage, setShowMessage] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowMessage(false)
+    }, 3000)
+
+    return () => clearTimeout(timer)
+  }, [showMessage])
 
   const changeHandler = event => {
     const { name, value } = event.target
@@ -61,7 +72,7 @@ const Contact = React.forwardRef((props, ref) => {
       })
       .then(data => {
         console.log(data)
-        alert('Data was successfully sent.')
+        setShowMessage(true)
         resetFormFields()
       })
       .catch(error => {
@@ -70,13 +81,21 @@ const Contact = React.forwardRef((props, ref) => {
   }
 
   return (
-    <Box ref={ref}>
+    <Box ref={ref} component='section' px={{ xs: 2, lg: 5 }}>
+      <Box>
+        {showMessage && (
+          <Alert variant='filled' severity='success' color='secondary'>
+            <AlertTitle>Success</AlertTitle>
+            Your message was successfully sent.
+          </Alert>
+        )}
+      </Box>
       <Box
-        component='section'
+        component='div'
         sx={{
-          mt: 10,
+          mt: 2,
           mb: 5,
-          px: 5,
+          // px: 5,
           '& .MuiTextField-root': {
             m: 0.5,
             // width: { xs: 'calc(100% - 0.5rem)', sm: 'calc(50% - 0.5rem)' },
@@ -96,20 +115,16 @@ const Contact = React.forwardRef((props, ref) => {
             color='secondary'
             mb={2}
             pl={1}
+            fontFamily='Shadows Into Light'
           >
-            Contact me
+            Let's chat!
           </Typography>
-          <Typography
-            component='h4'
-            variant='body1'
-            color='primary'
-            mb={2}
-            pl={1}
-          >
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto
-            exercitationem nihil dicta, dolorem quia adipisci cum rem possimus
-            ad eligendi ullam nesciunt sit excepturi. Dignissimos ipsam laborum
-            animi nisi quos.
+          <Typography paragraph variant='body1' color='primary' mb={2} pl={1}>
+            Want to get in touch? Whether you're interested in working on a
+            project together or just want to say hello, feel free to leave me a
+            message and I'll get back to you as soon as I can! You can also
+            check out my social links in the footer of the sidebar to get in
+            touch that way.
           </Typography>
           <Box
             component='form'
@@ -210,7 +225,7 @@ const Contact = React.forwardRef((props, ref) => {
                 type='submit'
                 sx={{
                   color: theme => theme.palette.secondary.main,
-                  display: 'inline-block',
+                  // display: { xs: 'block', sm: 'inline-block' },
                   padding: '.7rem 4rem',
                   border: '1px solid #08fdd8',
                   marginTop: '2rem',

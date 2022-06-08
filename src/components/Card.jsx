@@ -39,29 +39,6 @@ export default function RecipeReviewCard({ project }) {
     threshold: 0.2,
   })
 
-  // const containerRef = useRef(null)
-  // const [isVisible, setIsVisible] = useState(false)
-
-  // const callbackFunction = entries => {
-  //   const [entry] = entries
-  //   setIsVisible(entry.isIntersecting)
-  // }
-
-  // const options = {
-  //   root: null,
-  //   rootMargin: '0px',
-  //   threshold: 1.0,
-  // }
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(callbackFunction, options)
-  //   if (containerRef.current) observer.observe(containerRef.current)
-
-  //   return () => {
-  //     if (containerRef.current) observer.unobserve(containerRef.current)
-  //   }
-  // }, [containerRef, options])
-
   return (
     <Card
       sx={{
@@ -78,10 +55,7 @@ export default function RecipeReviewCard({ project }) {
           height: '10rem',
           boxShadow: '0 1px 8px rgba(0, 0, 0, 0.2)',
           overflow: 'hidden',
-          // visibility: `${inView ? 'visible' : 'hidden'}`,
-          // transform: `${inView ? 'scale(1)' : 'scale(.7)'}`,
           transition: 'all 0.2s ease-in',
-          filter: 'blur(5px)',
           filter: `${inView ? 'blur(0)' : 'blur(5px)'}`,
         }}
       >

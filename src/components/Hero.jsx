@@ -3,7 +3,6 @@ import { Box, Button, Slide, Stack, Typography } from '@mui/material'
 import Image from 'next/image'
 // import profilePic from '../../public/images/profile/atanas.jpg'
 import profilePic2 from '../../public/images/profile/atanas2.jpg'
-import Link from '../Link'
 
 const Hero = ({ onClickHanle }) => {
   const [shown, setShown] = useState(false)

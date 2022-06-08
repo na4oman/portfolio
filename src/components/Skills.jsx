@@ -45,6 +45,7 @@ const Skills = React.forwardRef((props, ref) => {
         textAlign='center'
         bgcolor='background.default'
         color='secondary'
+        fontFamily='Shadows Into Light'
       >
         My Skills
       </Typography>

@@ -21,6 +21,7 @@ const Work = React.forwardRef((props, ref) => {
         component='h2'
         variant='h2'
         color='secondary'
+        fontFamily='Shadows Into Light'
       >
         My Projects
       </Typography>

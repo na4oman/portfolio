@@ -7,7 +7,7 @@ import Hero from '../src/components/Hero'
 import Work from '../src/components/Work'
 import Skills from '../src/components/Skills'
 import Contact from '../src/components/Contact'
-import TopAppBar from '../src/components/TopAppBar'
+import AppbarMobile from '../src/components/AppbarMobile'
 import SidebarMobile from '../src/components/SidebarMobile'
 import About from '../src/components/About'
 import { Button } from '@mui/material'
@@ -40,7 +40,7 @@ export default function Index() {
 
   return (
     <>
-      <TopAppBar onClickHandler={handleClick} openIcon={openIcon} />
+      <AppbarMobile onClickHandler={handleClick} openIcon={openIcon} />
       {open && <SidebarMobile onClickHanle={executeScrollMobile} />}
       <Sidebar onClickHanle={executeScroll} />
       <Box
