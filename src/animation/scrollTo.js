@@ -7,7 +7,7 @@ const logError = () =>
     `Invalid element, are you sure you've provided element id or react ref?`
   )
 
-const getElementPosition = element => element.offsetTop - 100 // px top offset of target element
+const getElementPosition = element => element.offsetTop - 50 // px top offset of target element
 
 export const scrollTo = ({ id, ref = null, duration = 3000 }) => {
   // the position of the scroll bar before the user clicks the button

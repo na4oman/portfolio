@@ -10,8 +10,8 @@ import Contact from '../src/components/Contact'
 import AppbarMobile from '../src/components/AppbarMobile'
 import SidebarMobile from '../src/components/SidebarMobile'
 import About from '../src/components/About'
-import { Button } from '@mui/material'
 import { scrollTo } from '../src/animation/scrollTo'
+import ProgressBar from '../src/components/ProgressBar'
 
 export default function Index() {
   const [open, setOpen] = React.useState(false)
@@ -20,6 +20,8 @@ export default function Index() {
   const skillsRef = React.useRef()
   const workRef = React.useRef()
   const contactRef = React.useRef()
+  const [showProgress, setShowProgress] = React.useState(true)
+  const [progress, setProgress] = React.useState(0)
 
   const handleClick = () => {
     setOpen(prevState => !prevState)
@@ -40,21 +42,32 @@ export default function Index() {
 
   return (
     <>
-      <AppbarMobile onClickHandler={handleClick} openIcon={openIcon} />
-      {open && <SidebarMobile onClickHanle={executeScrollMobile} />}
-      <Sidebar onClickHanle={executeScroll} />
-      <Box
-        component='main'
-        sx={{
-          marginLeft: { xs: '0', md: '9rem' },
-        }}
-      >
-        <Hero onClickHanle={executeScroll} />
-        <About ref={aboutRef} />
-        <Skills ref={skillsRef} />
-        <Work ref={workRef} />
-        <Contact ref={contactRef} />
-      </Box>
+      {showProgress && (
+        <ProgressBar
+          progress={progress}
+          setProgress={setProgress}
+          setShowProgress={setShowProgress}
+        />
+      )}
+      {!showProgress && (
+        <React.Fragment>
+          <AppbarMobile onClickHandler={handleClick} openIcon={openIcon} />
+          {open && <SidebarMobile onClickHanle={executeScrollMobile} />}
+          <Sidebar onClickHanle={executeScroll} />
+          <Box
+            component='main'
+            sx={{
+              marginLeft: { xs: '0', md: '9rem' },
+            }}
+          >
+            <Hero onClickHanle={executeScroll} />
+            <About ref={aboutRef} />
+            <Skills ref={skillsRef} />
+            <Work ref={workRef} />
+            <Contact ref={contactRef} />
+          </Box>
+        </React.Fragment>
+      )}
     </>
   )
 }

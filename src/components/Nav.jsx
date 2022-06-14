@@ -61,7 +61,7 @@ export default function Nav({ onHandleClick }) {
       }}
       ref={boxContainerRef}
     >
-      <Slide
+      {/* <Slide
         direction='up'
         in={shown}
         container={boxContainerRef.current}
@@ -70,41 +70,41 @@ export default function Nav({ onHandleClick }) {
           enter: 'cubic-bezier(0, 1.5, .8, 1)',
           exit: 'linear',
         }}
+      > */}
+      <List
+        sx={{
+          color: theme => theme.palette.grey[500],
+          // selected and (selected + hover) states
+          '&& .Mui-selected, && .Mui-selected:hover': {
+            color: 'secondary.main',
+            backgroundColor: 'inherit',
+          },
+          // hover states
+          '& .MuiListItemButton-root:hover': {
+            color: 'secondary.main',
+            backgroundColor: 'inherit',
+          },
+        }}
       >
-        <List
-          sx={{
-            color: theme => theme.palette.grey[500],
-            // selected and (selected + hover) states
-            '&& .Mui-selected, && .Mui-selected:hover': {
-              color: 'secondary.main',
-              backgroundColor: 'inherit',
-            },
-            // hover states
-            '& .MuiListItemButton-root:hover': {
-              color: 'secondary.main',
-              backgroundColor: 'inherit',
-            },
-          }}
-        >
-          <MyDivider />
-          <MyListItem>
-            <MyListItemButton text='About' index={0} />
-          </MyListItem>
-          <MyDivider />
-          <MyListItem>
-            <MyListItemButton text='My Skills' index={1} />
-          </MyListItem>
-          <MyDivider />
-          <MyListItem>
-            <MyListItemButton text='Work' index={2} />
-          </MyListItem>
-          <MyDivider />
-          <MyListItem>
-            <MyListItemButton text='Contact' index={3} />
-          </MyListItem>
-          <MyDivider />
-        </List>
-      </Slide>
+        <MyDivider />
+        <MyListItem>
+          <MyListItemButton text='About' index={0} />
+        </MyListItem>
+        <MyDivider />
+        <MyListItem>
+          <MyListItemButton text='My Skills' index={1} />
+        </MyListItem>
+        <MyDivider />
+        <MyListItem>
+          <MyListItemButton text='Work' index={2} />
+        </MyListItem>
+        <MyDivider />
+        <MyListItem>
+          <MyListItemButton text='Contact' index={3} />
+        </MyListItem>
+        <MyDivider />
+      </List>
+      {/* </Slide> */}
     </Box>
   )
 }

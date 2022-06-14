@@ -6,6 +6,7 @@ import { projects } from '../../data'
 const Work = React.forwardRef((props, ref) => {
   return (
     <Box
+      component='section'
       ref={ref}
       my={10}
       px={{ xs: 2, lg: 5 }}
@@ -30,7 +31,7 @@ const Work = React.forwardRef((props, ref) => {
         rowSpacing={5}
         columnSpacing={1}
         sx={{
-          marginTop: '3rem',
+          marginTop: '1rem',
           justifyContent: 'center',
         }}
       >

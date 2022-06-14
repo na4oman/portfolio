@@ -37,7 +37,7 @@ const GridItem = ({ item, color }) => (
 
 const Skills = React.forwardRef((props, ref) => {
   return (
-    <Box ref={ref} mb={20} px={{ xs: '10%', sm: '20%' }}>
+    <Box component='section' ref={ref} mb={20} px={{ xs: '10%', sm: '20%' }}>
       <Typography
         component='h2'
         variant='h2'

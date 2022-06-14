@@ -21,7 +21,6 @@ const Hero = ({ onClickHanle }) => {
       component='section'
       bgcolor='background.default'
       color='text.secondary.main'
-      // paddingX={10}
       sx={{
         height: '100vh',
         display: 'flex',
