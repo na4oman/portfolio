@@ -4,7 +4,7 @@ export const projects = [
     title: 'Travel App',
     technologies: 'Mui, NextJS, MongoDB, Mapbox',
     summary:
-      'Fully responsive product application with functionality: search, bookmarks, pagination, tour detail page, mapbox location, adding comments. Using MongoDB for storing and retrieving data.',
+      'Fully responsive product application with functionality: search, bookmarks, pagination, product detail page, Mapbox for showing product location, adding comments. Using MongoDB for storing data. SWR hook for data fetching.',
     description:
       'Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna. Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna, Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna',
     image: '/images/projects/mui-next-travel-app.png',
@@ -16,7 +16,7 @@ export const projects = [
     title: 'YelpCamp',
     technologies: 'NodeJS, Express, MongoDB, Mapbox',
     summary:
-      'Fully responsive product application with functionality: campground detail page, login, create campground, mapbox location, leave a comment, storing images in Cloudinary. MongoDB is used for storing data as campgrounds, users, reviews and logout session.',
+      'Fully responsive RESTful API with CRUD functionality. EJS template for generating HTML markup. Login using PassportJS along with Mapbox location, storing images in Cloudinary. MongoDB is used for storing data as campgrounds, users, reviews and logout session.',
     description:
       'Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna. Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna, Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna',
     image: '/images/projects/yelpcamp.png',
@@ -28,7 +28,7 @@ export const projects = [
     title: 'Proshop shopping App',
     technologies: 'MongoDB, Express, React, NodeJS',
     summary:
-      'Fullr responsive e-commerce application with functionality: search, pagination, product detail page, leave a review, login, user profile page, PayPal payments, admin dashboard page where users, products and orders can be managed.',
+      'Fully responsive e-commerce application with full CRUD functionality along with search, pagination, product detail page, posting product review, login with JWT, user profile page, PayPal payments. Admin dashboard for managing all users, products and orders. Used React-Bootstrap, React-Router, Redux-Thunk.',
     description:
       'Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna. Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna, Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna',
     image: '/images/projects/proshop.png',
@@ -40,7 +40,7 @@ export const projects = [
     title: 'Natours tours',
     technologies: 'NodeJS, Express, MongoDB, Stripe, JWT',
     summary:
-      'Tours app with functionality: detail tour page, login, buy tour, Stripe payments, user profile page, adding reviews. Using MongoDB for storing tours, users, reviews, bookings.',
+      'Tours app with functionality: detail tour page, login with JWT, buy tour using Stripe payments, user profile page, my tours page, adding reviews. Using MongoDB for storing tours, users, reviews, bookings. Pug template for generating HTML markup.',
     description:
       'Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna. Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna, Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna',
     image: '/images/projects/natours-tours.png',
@@ -62,7 +62,7 @@ export const projects = [
   {
     id: '6',
     title: 'Forkify',
-    technologies: 'Javascript, SASS',
+    technologies: 'JavaScript, SASS',
     summary:
       'Food recipe app. Fetching DB from external API with functionality: search, pagination, bookmarks, create new recipe. It is used localStorage for storing session data.',
     description:
