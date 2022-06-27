@@ -52,7 +52,12 @@ export default function Index() {
       {!showProgress && (
         <React.Fragment>
           <AppbarMobile onClickHandler={handleClick} openIcon={openIcon} />
-          {open && <SidebarMobile onClickHanle={executeScrollMobile} />}
+          {open && (
+            <SidebarMobile
+              onClickHanle={executeScrollMobile}
+              handleClick={handleClick}
+            />
+          )}
           <Sidebar onClickHanle={executeScroll} />
           <Box
             component='main'

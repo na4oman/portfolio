@@ -52,7 +52,7 @@ export const projects = [
     title: 'Quotes App',
     technologies: 'React, Redux Toolkit, Firebase',
     summary:
-      'Fully responsive quotes app where you can create and comment quotes. Used Firebase as storing DB and Redux Toolkit for getting and fetching http requests.',
+      'Fully responsive quotes app where you can create and comment quotes. Using CSS modules for styling, Firebase as a DB and Redux Toolkit for getting and fetching http requests. Pages: All quotes, New quote, Quote detail and Not found.',
     description:
       'Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna. Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna, Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna',
     image: '/images/projects/quotes.png',

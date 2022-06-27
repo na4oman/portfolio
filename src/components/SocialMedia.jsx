@@ -1,15 +1,13 @@
 import React from 'react'
-import {
-  Box,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-} from '@mui/material'
+import Box from '@mui/material/Box'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemIcon from '@mui/material/ListItemIcon'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import FacebookIcon from '@mui/icons-material/Facebook'
-import InstagramIcon from '@mui/icons-material/Instagram'
+// import InstagramIcon from '@mui/icons-material/Instagram'
 
 export default function SocialMedia() {
   const [selectedIndex, setSelectedIndex] = React.useState(1)
@@ -19,6 +17,7 @@ export default function SocialMedia() {
       'https://www.linkedin.com/in/atanas-irikev-1247051b3/',
       'https://github.com/na4oman',
       'https://www.instagram.com/atanasirikev/',
+      'https://www.facebook.com/atanas.t.irikev/',
     ]
     window.open(links[index], '_blank')
   }
@@ -30,10 +29,7 @@ export default function SocialMedia() {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        // color: theme => theme.palette.grey[500],
-        // selected and (selected + hover) states
         '&& .Mui-selected, && .Mui-selected:hover': {
-          // color: 'info.main',
           color: theme => theme.palette.secondary.main,
           backgroundColor: 'inherit',
         },
@@ -81,7 +77,7 @@ export default function SocialMedia() {
           </ListItemIcon>
         </ListItemButton>
       </ListItem>
-      <ListItem>
+      {/* <ListItem>
         <ListItemButton
           sx={{ padding: 0 }}
           selected={selectedIndex === 2}
@@ -95,22 +91,22 @@ export default function SocialMedia() {
             />
           </ListItemIcon>
         </ListItemButton>
+      </ListItem> */}
+      <ListItem>
+        <ListItemButton
+          sx={{ padding: 0 }}
+          selected={selectedIndex === 3}
+          onClick={() => handleListItemClick(3)}
+        >
+          <ListItemIcon sx={{ minWidth: 0 }}>
+            <FacebookIcon
+              color='info'
+              fontSize='small'
+              sx={{ color: theme => theme.palette.grey[500] }}
+            />
+          </ListItemIcon>
+        </ListItemButton>
       </ListItem>
-      {/* <ListItem>
-          <ListItemButton
-            sx={{ padding: 0 }}
-            selected={selectedIndex === 3}
-            onClick={() => handleListItemClick(3)}
-          >
-            <ListItemIcon sx={{ minWidth: 0 }}>
-              <FacebookIcon
-                color='info'
-                fontSize='small'
-                sx={{ color: theme => theme.palette.grey[500] }}
-              />
-            </ListItemIcon>
-          </ListItemButton>
-        </ListItem> */}
     </List>
   )
 }

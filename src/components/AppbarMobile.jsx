@@ -40,7 +40,6 @@ export default function TopAppBar({ onClickHandler, openIcon }) {
             onClick={handleClick}
             component='div'
             sx={{
-              // flexGrow: 1,
               '&:hover': {
                 cursor: 'pointer',
               },

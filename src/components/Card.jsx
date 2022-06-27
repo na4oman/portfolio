@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
 import { styled } from '@mui/material/styles'
 import Card from '@mui/material/Card'
 import CardMedia from '@mui/material/CardMedia'
@@ -6,9 +6,9 @@ import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
-// import projectImage from '../../../public/images/projects/project1.avif'
 import Image from 'next/image'
-import { Box, Button, Fade, Grow } from '@mui/material'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
 import { useInView } from 'react-intersection-observer'
 
 const ExpandMore = styled(props => {

@@ -1,12 +1,16 @@
-import { Box, Stack, Typography } from '@mui/material'
+import Box from '@mui/material/Box'
+import Stack from '@mui/material/Stack'
+import Typography from '@mui/material/Typography'
 
-export default function Logo() {
-  const handleClick = () =>
+export default function Logo({ onClose }) {
+  const handleClick = () => {
     window.scroll({
       top: 0,
       left: 0,
       behavior: 'smooth',
     })
+    onClose()
+  }
 
   return (
     <Box

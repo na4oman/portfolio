@@ -1,13 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react'
-import {
-  Box,
-  Divider,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  Slide,
-} from '@mui/material'
+import Box from '@mui/material/Box'
+import Divider from '@mui/material/Divider'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemText from '@mui/material/ListItemText'
+
 import { styled } from '@mui/system'
 
 const MyListItem = styled(ListItem)(() => ({
@@ -61,16 +59,6 @@ export default function Nav({ onHandleClick }) {
       }}
       ref={boxContainerRef}
     >
-      {/* <Slide
-        direction='up'
-        in={shown}
-        container={boxContainerRef.current}
-        timeout={2000}
-        easing={{
-          enter: 'cubic-bezier(0, 1.5, .8, 1)',
-          exit: 'linear',
-        }}
-      > */}
       <List
         sx={{
           color: theme => theme.palette.grey[500],
@@ -104,7 +92,6 @@ export default function Nav({ onHandleClick }) {
         </MyListItem>
         <MyDivider />
       </List>
-      {/* </Slide> */}
     </Box>
   )
 }

@@ -1,11 +1,11 @@
 import * as React from 'react'
 import Image from 'next/image'
 import Dialog from '@mui/material/Dialog'
-import { Box, Grid } from '@mui/material'
+import Grid from '@mui/material/Grid'
 
 const defaultImageSrcset = '/images/certificates/html-css.jpg'
 
-export default function MyImageList() {
+export default function Certificates() {
   const [open, setOpen] = React.useState(false)
   const [imgSrcset, setImgSrcset] = React.useState(defaultImageSrcset)
 
@@ -61,14 +61,10 @@ export default function MyImageList() {
         }}
       >
         <Image
-          // src='/images/certificates/javascript.jpg'
           src={imgSrcset}
           alt={imgSrcset}
           width={900}
           height={600}
-          // layout='fill'
-          // objectFit='cover'
-          // objectPosition='center'
           priority
         />
       </Dialog>

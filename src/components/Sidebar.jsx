@@ -3,7 +3,6 @@ import Box from '@mui/material/Box'
 import Logo from './Logo'
 import Nav from './Nav'
 import SocialMedia from './SocialMedia'
-import { Button, Slide } from '@mui/material'
 
 const Sidebar = ({ onClickHanle }) => {
   const clickHandler = index => onClickHanle(index)
@@ -23,7 +22,7 @@ const Sidebar = ({ onClickHanle }) => {
         justifyContent: 'space-around',
       }}
     >
-      <Logo />
+      <Logo onClose={() => {}} />
       <Nav onHandleClick={clickHandler} />
       <SocialMedia />
     </Box>

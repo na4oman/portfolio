@@ -3,13 +3,14 @@ import Box from '@mui/material/Box'
 import Logo from './Logo'
 import Nav from './Nav'
 import SocialMedia from './SocialMedia'
-import { Slide } from '@mui/material'
+import Slide from '@mui/material/Slide'
 
-const SidebarMobile = ({ onClickHanle }) => {
+const SidebarMobile = ({ onClickHanle, handleClick }) => {
   const [shown, setShown] = useState(false)
   const containerRef = useRef(null)
 
   const clickHandler = index => onClickHanle(index)
+  const closeSidebarMobile = () => handleClick()
 
   useEffect(() => {
     setShown(true)
@@ -49,7 +50,7 @@ const SidebarMobile = ({ onClickHanle }) => {
         zIndex={100}
         ref={containerRef}
       >
-        <Logo />
+        <Logo onClose={closeSidebarMobile} />
         <Nav onHandleClick={clickHandler} />
         <SocialMedia />
       </Box>

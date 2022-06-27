@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Box, Button, Slide, Stack, Typography } from '@mui/material'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Slide from '@mui/material/Slide'
+import Stack from '@mui/material/Stack'
+import Typography from '@mui/material/Typography'
 import Image from 'next/image'
-// import profilePic from '../../public/images/profile/atanas.jpg'
 import profilePic2 from '../../public/images/profile/atanas2.jpg'
 
 const Hero = ({ onClickHanle }) => {

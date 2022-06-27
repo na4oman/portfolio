@@ -28,7 +28,7 @@ const Mapbox = () => {
         // style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
         style: 'mapbox://styles/atanas-irikev/cl4403xq9000214nsenvj1ske', // stylesheet location
         center: [23.312892, 42.699385],
-        zoom: 5,
+        zoom: 7,
       })
 
       // Add zoom and rotation controls to the map.

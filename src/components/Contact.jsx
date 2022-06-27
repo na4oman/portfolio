@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import {
-  Box,
-  Button,
-  TextareaAutosize,
-  TextField,
-  Typography,
-} from '@mui/material'
-import Image from 'next/image'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import TextField from '@mui/material/TextField'
+import Typography from '@mui/material/Typography'
 
-import Link from '../Link'
-import addressPicture from '../../public/images/contact/address4.png'
 import Copyright from '../Copyright'
 import Mapbox from './Mapbox'
 import Alert from '@mui/material/Alert'
@@ -45,18 +39,6 @@ const Contact = React.forwardRef((props, ref) => {
 
   const submitHandler = event => {
     event.preventDefault()
-    // const formData = new FormData(event.currentTarget)
-    // const name = formData.get('name')
-    // const email = formData.get('email')
-    // const subject = formData.get('subject')
-    // const message = formData.get('message')
-
-    // const newFormData = {
-    //   name,
-    //   email,
-    //   subject,
-    //   message,
-    // }
 
     fetch(`/api/messages`, {
       method: 'POST',
@@ -95,7 +77,6 @@ const Contact = React.forwardRef((props, ref) => {
         sx={{
           mt: 2,
           mb: 5,
-          // px: 5,
           '& .MuiTextField-root': {
             m: 0.5,
             // width: { xs: 'calc(100% - 0.5rem)', sm: 'calc(50% - 0.5rem)' },
@@ -225,7 +206,6 @@ const Contact = React.forwardRef((props, ref) => {
                 type='submit'
                 sx={{
                   color: theme => theme.palette.secondary.main,
-                  // display: { xs: 'block', sm: 'inline-block' },
                   padding: '.7rem 4rem',
                   border: '1px solid #08fdd8',
                   marginTop: '2rem',
@@ -256,15 +236,7 @@ const Contact = React.forwardRef((props, ref) => {
             minWidth: '50%',
           }}
         >
-          {/* <Image src={addressPicture} /> */}
           <Mapbox />
-          {/* GOOGLE MAPS */}
-          {/* <iframe
-            src='https://snazzymaps.com/embed/397127'
-            width='100%'
-            height='500px'
-            frameBorder='none'
-          ></iframe> */}
         </Box>
       </Box>
       <Box mb={5}>
