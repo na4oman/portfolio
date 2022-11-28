@@ -74,14 +74,14 @@ export const projects = [
   {
     id: '7',
     title: 'Omnifood',
-    technologies: 'HTML, CSS',
+    technologies: 'React, TailwindCSS',
     summary:
-      'Fully responsive product landing page created only with HTML and CSS. It uses best practises for structuring a page with HTML5 semantic elements. Styles is created with well structured pure CSS.',
+      'Fully responsive product landing page created with React and TailwindCSS. Designed and created by Jonas Schmedtmann in his HTML and CSS Udemy course and recreated by me using modern technologies like React and TailwindCSS.',
     description:
       'Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna. Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna, Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna',
     image: '/images/projects/omnifood.png',
-    demoLink: 'https://omnifood-atanas.netlify.app/',
-    codeLink: 'https://github.com/na4oman/omnifood',
+    demoLink: 'https://omnifood-react-tailwindcss.netlify.app/',
+    codeLink: 'https://github.com/na4oman/omnifood-react-tailwindcss',
   },
   {
     id: '8',
