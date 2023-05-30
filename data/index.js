@@ -32,7 +32,7 @@ export const projects = [
     description:
       'Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna. Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna, Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna',
     image: '/images/projects/proshop.png',
-    demoLink: 'https://proshopapp-atanas.herokuapp.com/',
+    demoLink: 'https://proshop-app-atanas.onrender.com/',
     codeLink: 'https://github.com/na4oman/proshopapp',
   },
   {
